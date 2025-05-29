@@ -1,0 +1,35 @@
+{
+  "name": "server_app_ventanas_pypconsulteam",
+  "version": "1.0.0",
+  "description": "Server_App_Ventanas_PYPCONSULTEAM",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryantgus/Server_App_Ventanas_PYPCONSULTEAM.git"
+  },
+  "author": "Bryant Tejeda Florimon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bryantgus/Server_App_Ventanas_PYPCONSULTEAM/issues"
+  },
+  "homepage": "https://github.com/Bryantgus/Server_App_Ventanas_PYPCONSULTEAM#readme",
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express-validator": "^2.20.33",
+    "colors": "^1.4.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.24",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
