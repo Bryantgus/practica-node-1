@@ -1,4 +1,4 @@
-{
+const agenda = {
   "1": {
     "nombre": "Juan Pérez",
     "telefono": "+34 612 345 678",
@@ -70,3 +70,5 @@
     "etiquetas": ["colega", "universidad"]
   }
 }
+
+export default agenda

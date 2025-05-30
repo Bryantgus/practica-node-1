@@ -1,28 +1,33 @@
 import { Request, Response } from 'express'
-import { getAllContacts } from '../middleware/contacts'
+import agenda from '../data/agendaDeContactos'
 
 export class ContactController {
     static getAll = async (req: Request, res: Response) => {
-        const allContacts = await getAllContacts()
-        res.json(allContacts)
+        res.json(agenda)
     }
 
     static getById = async (req: Request, res: Response) => {
+        const id = req.params.contactsId;
 
-    const allContacts = await getAllContacts();
-    const id = Number(req.params.contactsId);
+        if (id === undefined) {
+            res.status(404).json("Id no encontrado");
+            return;
+        }
+        if (isNaN(Number(id))) {
+            res.status(400).json("Id debe ser un número");
+            return;
+        }
 
-    if (isNaN(id)) {
-        return res.status(400).json({ message: 'ID inválido' });
+        const contacto = agenda[id];
+
+        if (!contacto) {
+            res.status(404).json("Contacto no encontrado");
+            return;
+        }
+
+        res.json(contacto);
     }
 
-    const contact = allContacts.find((c: any) => c.id === id);
 
-    if (!contact) {
-        return res.status(404).json({ error: 'Id no existe' });
-    }
-
-    res.json(contact);
-    }
 
 }
